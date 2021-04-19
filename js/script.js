@@ -9,6 +9,7 @@
 var finalPriceBtn = document.getElementById("button");
 var finalPrice = document.getElementById("price");
 var burgerCustomersName = document.getElementById("name");
+var usersCoupon = document.getElementById("coupon");
 // if(!burgerCustomersName.value){
 //     alert("per ordinare il tuo burger è necessario inventarsi un nome");
 // } LO LEVO PER NON AVERE SEMPRE BLOCCAT LA PAGINA - RICORDARSI DI INSERIRLO NUOVAMENTE.
@@ -16,7 +17,7 @@ console.log(burgerCustomersName);
 var ingredientsList = document.querySelectorAll(".ingredient [type ='checkbox']");
 console.log(ingredientsList);
 var sommaPrezzo = 50;
-var validCouponList = ["12354ABCDEF", "12345ABCDEF", "10354ABCDEF","12004ABCDEF"];
+var validCouponList = ["12354ABCDEF", "12345ABCDEF", "10354ABCDEF", "12004ABCDEF"];
 finalPriceBtn.addEventListener("click", function () {
     //come fare per calcolare se un elemento è inserito o meno? setto somma iniziale a 50 - ricordo che serve ParseInt per .value
 
@@ -24,21 +25,25 @@ finalPriceBtn.addEventListener("click", function () {
     // ingredients.value - è prezzo /// ingredients.checked booleano cosa faccio? se un ingrediente c'è (true) lo sommo al prezzo Default
     for (var i = 0; i < ingredientsList.length; i++) {
         var ingredient = ingredientsList[i];
-        if (ingredient.checked){
+        if (ingredient.checked) {
             sommaPrezzo += parseInt(ingredient.value);
         }
     }
     console.log(sommaPrezzo);
     //per validità coupon faccio ciclo for o mi uso switch/case?
-    for (var j = 0; j < validCouponList; j++){
-        var validDiscount = validCouponList[i]
-
-        //NON PUò FUNZIONARE SE NON RICHIAMO DOM ARREY!!!Svegliaaaaaaaa
-
+    //mi manca ancora da prendere value input coupon!!
+    for (var j = 0; j < validCouponList; j++) {
+        var validDiscount = validCouponList[j];
+        if (usersCoupon.value === validDiscount){
+            finalPrice.innerHTML = Discount15(sommaPrezzo);
+        } else {
+            finalPrice.innerHTML = sommaPrezzo;
+        }
+        console.log(sommaPrezzo);
     }
-    finalPrice.innerHTML = sommaPrezzo;
 })
 // mi faccio una funzione sconto 15%
-function Discount15 (price){
-    price = (price - (15*100)/15).toFixed(2);
+function Discount15(price) {
+    price = (price - ((price / 100) * 15)).toFixed(2);
 }
+
