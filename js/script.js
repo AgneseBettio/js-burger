@@ -32,8 +32,8 @@ finalPriceBtn.addEventListener("click", function () {
         }
     }
     console.log(sommaPrezzo);
-    //per validità coupon faccio ciclo for o mi uso switch/case?
-    //mi manca ancora da prendere value input coupon!!
+    //per validità coupon faccio ciclo for 
+
     for (var j = 0; j < validCouponList.length; j++) {
         var validDiscount = validCouponList[j];
         if (usersCoupon.value === validDiscount) {
