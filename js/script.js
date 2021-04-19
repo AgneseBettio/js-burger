@@ -13,14 +13,17 @@ var burgerCustomersName = document.getElementById("name");
 // } LO LEVO PER NON AVERE SEMPRE BLOCCAT LA PAGINA - RICORDARSI DI INSERIRLO NUOVAMENTE.
 console.log(burgerCustomersName);
 var ingredientsList = document.querySelectorAll(".ingredient [type ='checkbox']");
-console.log(ingredients);
+console.log(ingredientsList);
 var sommaDefault = 50;
-finalPriceBtn.addEventListener("click", function(){
-  //come fare per calcolare se un elemento è inserito o meno? setto somma iniziale a 50 - ricordo che serve ParseInt per .value
+finalPriceBtn.addEventListener("click", function () {
+    //come fare per calcolare se un elemento è inserito o meno? setto somma iniziale a 50 - ricordo che serve ParseInt per .value
 
-  // ---> voglio fare un ciclo
-  // ingredients.value - è prezzo /// ingredients.checked booleano
-  for(var i = 0; i< ingredientsList.length; i++ ){
-      var ingredient = 
-  }
+    // ---> voglio fare un ciclo
+    // ingredients.value - è prezzo /// ingredients.checked booleano
+    for (var i = 0; i < ingredientsList.length; i++) {
+        var ingredient = ingredientsList[i];
+        if (ingredient.check){
+            sommaDefault += parseInt(ingredient.value);
+        }
+    }
 })
