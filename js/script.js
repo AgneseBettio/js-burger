@@ -31,7 +31,9 @@ finalPriceBtn.addEventListener("click", function () {
     console.log(sommaPrezzo);
     //per validità coupon faccio ciclo for o mi uso switch/case?
     for (var j = 0; j < validCouponList; j++){
-        
+        var validDiscount = validCouponList[i]
+
+        //NON PUò FUNZIONARE SE NON RICHIAMO DOM ARREY!!!Svegliaaaaaaaa
 
     }
     finalPrice.innerHTML = sommaPrezzo;
