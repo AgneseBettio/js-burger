@@ -34,13 +34,12 @@ finalPriceBtn.addEventListener("click", function () {
     //mi manca ancora da prendere value input coupon!!
     for (var j = 0; j < validCouponList; j++) {
         var validDiscount = validCouponList[j];
-        if (usersCoupon.value === validDiscount){
-            finalPrice.innerHTML = Discount15(sommaPrezzo);
-        } else {
-            finalPrice.innerHTML = sommaPrezzo;
+        if (usersCoupon.value === validDiscount) {
+            sommaPrezzo = Discount15(sommaPrezzo);
         }
         console.log(sommaPrezzo);
     }
+    finalPrice.innerHTML = sommaPrezzo;
 })
 // mi faccio una funzione sconto 15%
 function Discount15(price) {
