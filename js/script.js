@@ -7,6 +7,7 @@
 //cheeckbox - ha element.value e element.checked
 //voglio utilizzare ciclo per non ripetere singoli elementi ingredienti
 var finalPriceBtn = document.getElementById("button");
+var finalPrice = document.getElementById("price");
 var burgerCustomersName = document.getElementById("name");
 // if(!burgerCustomersName.value){
 //     alert("per ordinare il tuo burger è necessario inventarsi un nome");
@@ -14,16 +15,18 @@ var burgerCustomersName = document.getElementById("name");
 console.log(burgerCustomersName);
 var ingredientsList = document.querySelectorAll(".ingredient [type ='checkbox']");
 console.log(ingredientsList);
-var sommaDefault = 50;
+var sommaPrezzo = 50;
 finalPriceBtn.addEventListener("click", function () {
     //come fare per calcolare se un elemento è inserito o meno? setto somma iniziale a 50 - ricordo che serve ParseInt per .value
 
     // ---> voglio fare un ciclo
-    // ingredients.value - è prezzo /// ingredients.checked booleano
+    // ingredients.value - è prezzo /// ingredients.checked booleano cosa faccio? se un ingrediente c'è (true) lo sommo al prezzo Default
     for (var i = 0; i < ingredientsList.length; i++) {
         var ingredient = ingredientsList[i];
-        if (ingredient.check){
-            sommaDefault += parseInt(ingredient.value);
+        if (ingredient.checked){
+            sommaPrezzo += parseInt(ingredient.value);
         }
     }
+    console.log(sommaPrezzo);
+    finalPrice.innerHTML = sommaPrezzo;
 })
