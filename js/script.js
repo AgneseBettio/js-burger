@@ -16,6 +16,7 @@ console.log(burgerCustomersName);
 var ingredientsList = document.querySelectorAll(".ingredient [type ='checkbox']");
 console.log(ingredientsList);
 var sommaPrezzo = 50;
+var validCouponList = ["12354ABCDEF", "12345ABCDEF", "10354ABCDEF","12004ABCDEF"];
 finalPriceBtn.addEventListener("click", function () {
     //come fare per calcolare se un elemento è inserito o meno? setto somma iniziale a 50 - ricordo che serve ParseInt per .value
 
@@ -28,5 +29,14 @@ finalPriceBtn.addEventListener("click", function () {
         }
     }
     console.log(sommaPrezzo);
+    //per validità coupon faccio ciclo for o mi uso switch/case?
+    for (var j = 0; j < validCouponList; j++){
+        
+
+    }
     finalPrice.innerHTML = sommaPrezzo;
 })
+// mi faccio una funzione sconto 15%
+function Discount15 (price){
+    price = (price - (15*100)/15).toFixed(2);
+}
