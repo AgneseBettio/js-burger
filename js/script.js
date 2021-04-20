@@ -10,9 +10,7 @@ var finalPriceBtn = document.getElementById("button");
 var finalPrice = document.getElementById("price");
 var burgerCustomersName = document.getElementById("name");
 var usersCoupon = document.getElementById("coupon");
-// if(!burgerCustomersName.value){
-//     alert("per ordinare il tuo burger è necessario inventarsi un nome");
-// } LO LEVO PER NON AVERE SEMPRE BLOCCAT LA PAGINA - RICORDARSI DI INSERIRLO NUOVAMENTE.
+
 console.log(burgerCustomersName);
 var ingredientsList = document.querySelectorAll(".ingredient [type ='checkbox']");
 console.log(ingredientsList);
@@ -20,7 +18,9 @@ console.log(ingredientsList);
 var validCouponList = ["12354ABCDEF", "12345ABCDEF", "10354ABCDEF", "12004ABCDEF"];
 finalPriceBtn.addEventListener("click", function () {
     var sommaPrezzo = 50;
-
+    if(!burgerCustomersName.value){
+        alert("per ordinare il tuo burger è necessario inventarsi un nome");
+    }
     //come fare per calcolare se un elemento è inserito o meno? setto somma iniziale a 50 - ricordo che serve ParseInt per .value
 
     // ---> voglio fare un ciclo
